@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/* ── Custom Theme – Vibrant Indian Pop-Art ── */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-devanagari: "Noto Sans Devanagari", sans-serif;
+  --font-display: "Georgia", "Times New Roman", serif;
+
+  /* Vibrant Indian pop-art palette */
+  --color-royal-blue: #2B3DE7;
+  --color-sky-blue: #3A5FFF;
+  --color-golden: #F5B731;
+  --color-golden-dark: #D4960A;
+  --color-saffron: #E8712A;
+  --color-red-tv: #D42B2B;
+  --color-hot-pink: #E23FA9;
+  --color-magenta: #C41E7A;
+  --color-green-field: #1B8C2E;
+  --color-green-dark: #0E6B1E;
+  --color-green-grass: #2DAA42;
+  --color-orange-warm: #E86830;
+  --color-orange-sunset: #D4592A;
+  --color-cream: #FAF8F5;
+  --color-charcoal: #1A1A1A;
+  --color-white: #FFFFFF;
+  --color-badge-blue: #3946D4;
+  --color-badge-red: #D42B2B;
+}
+
+/* ── Base Resets ── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-royal-blue);
+    color: var(--color-white);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  .font-devanagari {
+    font-family: var(--font-devanagari);
+    font-size-adjust: 0.52;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background-color: var(--color-golden);
+    color: var(--color-charcoal);
+  }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-golden) var(--color-royal-blue);
+  }
+}
+
+/* ── Utility Extensions ── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gpu-accelerate {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  /* Horizontal stripe pattern generator */
+  .stripes-hero-bottom {
+    background: repeating-linear-gradient(
+      0deg,
+      var(--color-royal-blue) 0px,
+      var(--color-royal-blue) 6px,
+      var(--color-red-tv) 6px,
+      var(--color-red-tv) 12px
+    );
+  }
+
+  .stripes-blue-red {
+    background: repeating-linear-gradient(
+      0deg,
+      var(--color-royal-blue) 0px,
+      var(--color-royal-blue) 6px,
+      var(--color-red-tv) 6px,
+      var(--color-red-tv) 12px
+    );
+  }
+
+  .stripes-orange {
+    background: repeating-linear-gradient(
+      0deg,
+      var(--color-saffron) 0px,
+      var(--color-saffron) 3px,
+      var(--color-golden) 3px,
+      var(--color-golden) 6px
+    );
+  }
+
+  .stripes-yellow {
+    background: repeating-linear-gradient(
+      0deg,
+      var(--color-golden) 0px,
+      var(--color-golden) 3px,
+      var(--color-golden-dark) 3px,
+      var(--color-golden-dark) 6px
+    );
+  }
+
+  .stripes-green {
+    background: repeating-linear-gradient(
+      0deg,
+      var(--color-green-field) 0px,
+      var(--color-green-field) 3px,
+      var(--color-green-dark) 3px,
+      var(--color-green-dark) 6px
+    );
+  }
+
+  .stripes-pink-blue {
+    background: repeating-linear-gradient(
+      0deg,
+      var(--color-hot-pink) 0px,
+      var(--color-hot-pink) 4px,
+      var(--color-royal-blue) 4px,
+      var(--color-royal-blue) 8px
+    );
+  }
+
+  /* Hindi label badge */
+  .hindi-badge {
+    display: inline-block;
+    background-color: var(--color-badge-blue);
+    color: white;
+    padding: 4px 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .hindi-badge-red {
+    display: inline-block;
+    background-color: var(--color-badge-red);
+    color: white;
+    padding: 4px 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+}
